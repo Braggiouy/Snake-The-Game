@@ -1,0 +1,28 @@
+table {
+  margin: auto;
+  background-color: rgb(51, 133, 51);
+}
+
+td {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(184, 243, 184);
+}
+
+.apple {
+  background-color: rgb(128, 15, 15);
+}
+
+.snake {
+  background-color: rgb(199, 85, 104);
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#btn-start {
+  background-color: aqua;
+}
