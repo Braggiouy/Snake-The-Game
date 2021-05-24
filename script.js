@@ -1,16 +1,16 @@
 function Snake () {
   this.top = 10
   this.left = 10
-  this.direction = 1
+  this.direction = 1 // Snakes direction. If value is 1, it goes up. Value 2, goes right. 3 is down, and 4 is left. 
 
-  this.move= function () { 
+  this.move= function () { // It s how the snake moves, it moves the snake, therefore, it s a method from object Snake. 
     if (this.direction === 1) this.top--
     if (this.direction === 2) this.left++
     if (this.direction === 3) this.top++
     if (this.direction === 4) this.left--
   }
 
-  this.changeDirection = function (code) {
+  this.changeDirection = function (code) { // this method allows us the change the snake direction.
     if (code === 'ArrowUp') this.direction = 1
     if (code === 'ArrowRight') this.direction = 2
     if (code === 'ArrowDown') this.direction = 3
@@ -30,15 +30,15 @@ var gameId
 
 function gameOver () { 
   if (snake.top === 0 || snake.top === 21 || snake.left === 0 || snake.left === 21) {
-    clearInterval(gameId)
-    window.alert('LOOOSER!')
+    clearInterval(gameId) // for the snake to stop
+    window.alert('LOOOSER!') // Game is over
     return true
   } 
     return false
 
 }
 
-function clearBoard () {
+function clearBoard () { // it erases the snake while it moves
   var row = document.getElementsByClassName('row' + snake.top)[0]
   var cell = row.getElementsByClassName('col' + snake.left)[0]
   cell.classList.remove('snake') 
@@ -54,22 +54,23 @@ function drawBoard () {
   cell.classList.add('apple')
 }
 
-function animate () {
-  clearBoard()
-  snake.move()
-  if (!gameOver()) {
+function animate () { // animation bucle that draws the board
+  clearBoard() // it erase the board before it starts
+  snake.move() // the snake moves, and it starts painting its way while it moves.
+  if (!gameOver()) { // 
+  drawBoard()}
 }
 
 function startGame () {
   drawBoard()
-  gameId = setInterval(animate, 500)
+  gameId = setInterval(animate, 500) // callback function
 
 }
 
 var btnStart = document.getElementById('btn-start')
-btnStart.onclick = startGame
+btnStart.onclick = startGame // boton to initialize the game
 
-window.addEventListener('keydown', function(e) {
+window.addEventListener('keydown', function(e) { // e = current is what activates the game
   snake.changeDirection(e.code)
 
 })
