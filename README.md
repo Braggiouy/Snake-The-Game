@@ -9,7 +9,6 @@ Simple Snake game, created just with HTML, CSS, and JavaScript
 
 #### Things to add afterwards, not necessary but nice to add : \
 - Let the snake move between sides (left-right-up-down), as in an infinite loop, creating the effect of the snake being inside a globe.
-- If snake touches itself, it dies. 
-- For each apple eaten, increase snake's speed by X amount (X to be defined) 
+- If snake touches itself, it dies.
 
 
